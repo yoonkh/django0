@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="post-list">
+
+    <div class="post">
+        <h4><a href="">{{ post.title }}<a href="{% url 'post_modify' pk=post.pk %}" class="btn btn-default pull-right">Edit</a></a></h4>
+        <p class="text-right"><small>published: {{ post.published_date }}</small></p>
+
+        <p>{{ post.text }} </p>
+    </div>
+
+</div>
+{% endblock %}

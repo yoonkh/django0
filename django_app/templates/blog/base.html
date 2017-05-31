@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django Girls Blog</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container">
+  <h1>Django Test</h1>
+  <p>{{ title }}</p>
+  <p><a class="btn btn-primary btn-lg" href="{% url 'post_list' %}" role="button">Test</a></p>
+
+        {% block content %}
+        {% endblock %}
+    </div>
+    </div>
+</body>
+</html>
