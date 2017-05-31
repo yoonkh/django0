@@ -1,4 +1,7 @@
-
+.input-group {
+    width: 600px;
+    padding-bottom: 30px;
+}
 .post-list > .post {
     padding-bottom: 30px;
     padding-top: 30px;

@@ -1,25 +1,16 @@
-{% load staticfiles %}
-<!doctype html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Django Girls Blog</title>
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <div class="container">
-     <div class="header">
-        <h1><a href="{% url 'post_list' %}">Django Girls Blog</a></h1>
-        <h4>{{ title }}</h4>
+{% extends 'blog/base.html' %}
 
-     </div>
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">title</span>
+  <input type="text" class="form-control" placeholder="{{ post.title }}" aria-describedby="basic-addon1">
+</div>
 
-        {% block content %}
-        {% endblock %}
-    </div>
-</body>
-</html>
+        <textarea name="text" id="" cols="100" rows="30">{{ post.text }}</textarea>
+
+        <button type="submit" class="btn btn-primary btn-block">수정</button>
+
+    </form>
+{% endblock %}
